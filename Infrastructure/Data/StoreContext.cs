@@ -1,11 +1,11 @@
- using System;
+using System;
 using core.Entities;
 using Infrastructure.Config;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data;
 
-public class StoreContext(DbContextOptions options) : DbContext(options)
+public class StoreContext(DbContextOptions<StoreContext> options) : DbContext(options)
 {
     public DbSet<Product> Products { get; set; }
 
